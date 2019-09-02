@@ -1,0 +1,14 @@
+appdirs==1.4.3
+dj-database-url==0.4.2
+Django==1.11
+djangorestframework==3.6.3
+gunicorn==19.7.1
+httpie==0.9.9
+packaging==16.8
+psycopg2==2.7.1
+Pygments==2.2.0
+pyparsing==2.2.0
+pytz==2017.2
+requests==2.14.2
+six==1.10.0
+whitenoise==3.3.0
