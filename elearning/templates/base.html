@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django E-learning</title>
+    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          {% if request.user.is_authenticated %}
+          <p>Logged in as <a href="{% url 'student_detail' %}">{{ request.user.username }}</a>(<a href="{% url 'auth:logout' %}">Logout</a>)</p>
+          {% else %}
+          <p><a href="{% url 'auth:login' %}">Login</a></p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% block "content" %}Default content{% endblock %}
+    <script src="{% static 'jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
